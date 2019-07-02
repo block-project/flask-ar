@@ -1,21 +1,23 @@
 <!doctype HTML>
 <html>
-<script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
-<script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.1/aframe/build/aframe-ar.js"></script>
+<script src="{{ url_for('static', filename='vendor/aframe/build/aframe.min.js')}}"></script>
+<script src="{{ url_for('static', filename='build/aframe-ar.js')}}"></script>
+<!-- <script src="{{ url_for('static', filename='three.js/')}}"></script> -->
+<!-- <script>ARjs.Context.baseURL = '../static/three.js'</script> -->
 <body style='margin : 0px; overflow: hidden;'>
-<a-scene embedded arjs>
+<a-scene embedded arjs='sourceType: webcam;'>
     <a-marker preset="hiro">
         <a-entity
                 rotation="-90 0 0"
-                geometry="primitive: plane; height: auto; width: auto"
-                position="2.5 0 0"
-                material="color: transparent"
-                text="width: 4; value: This text will be 4 units wide."
-                z-offset="-1"
+                position="7 0 0"
+                material="opacity:0"
+                text="width: 4;color:black;width:10%;height:10%; value: This text will be 4 units wide."
+        
         ></a-entity>
     </a-marker>
     <a-entity camera></a-entity>
 </a-scene>
+
 </body>
 </html>
 
